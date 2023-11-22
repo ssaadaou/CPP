@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
@@ -6,20 +6,20 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 22:23:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/20 23:25:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:06:14 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "Zombie.hpp"
 
-Zombie::Zombie()
+Zombie::Zombie(std::string name)
 {
-    
+     this->name = name;
 }
 
 Zombie::~Zombie()
 {
-    
+    std::cout << name << "destroyed !" << std::endl;
 }
 void Zombie::announce (void)
 {
@@ -27,8 +27,11 @@ void Zombie::announce (void)
 }
 int main ()
 {
-    Zombie tmp;
+    Zombie *tmp ;
+    randomChump("salma");
     
+    tmp = newZombie("aaaaaaaaaaaaa");
+    tmp->announce ();
     
 }
 

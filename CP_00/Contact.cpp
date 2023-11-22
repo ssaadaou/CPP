@@ -1,75 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tes1.cpp                                           :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:55:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/15 20:55:59 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/21 20:17:08 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
-
-// class Contact {
-// private:
-//     std::string firstName, lastName, nickname, phoneNumber, darkestSecret;
-
-// public:
-//     void setDetails(const std::string& fName, const std::string& lName, 
-//                     const std::string& nick, const std::string& phone, 
-//                     const std::string& secret) {
-//         firstName = fName;
-//         lastName = lName;
-//         nickname = nick;
-//         phoneNumber = phone;
-//         darkestSecret = secret;
-//     }
-
-//     // Add getter methods as needed to retrieve contact details
-// };
-// class PhoneBook {
-// private:
-//     Contact contacts[8];
-//     int currentIndex = 0;
-
-// public:
-//     void addContact(const Contact& newContact) {
-//         // Replace the oldest contact if 8 contacts already exist
-//         contacts[currentIndex % 8] = newContact;
-//         currentIndex++;
-//     }
-
-//     void displayContacts() {
-//         // Loop through the contacts array and display details
-//         // Implement the formatting logic as per the exercise requirement
-//     }
-
-//     // Add a method to display detailed contact information if needed
-// };
-// int main() {
-//     PhoneBook myPhoneBook;
-//     std::string command, fName, lName, nick, phone, secret;
-
-//     while (true) {
-//         std::cout << "Enter command (ADD, SEARCH, EXIT): ";
-//         std::cin >> command;
-
-//         if (command == "ADD") {
-//             std::cout << "Enter first name: "; std::cin >> fName;
-//             std::cout << "Enter last name: "; std::cin >> lName;
-//             // ... get the rest of the details
-//             Contact newContact;
-//             newContact.setDetails(fName, lName, nick, phone, secret);
-//             myPhoneBook.addContact(newContact);
-//         } else if (command == "SEARCH") {
-//             myPhoneBook.displayContacts();
-//             // ... implement search functionality
-//         } else if (command == "EXIT") {
-//             break;
-//         }
-//     }
-//     return 0;
-// }
+/******************************************************************************/
 
 #include "Contact.hpp"
 

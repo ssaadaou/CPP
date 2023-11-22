@@ -6,13 +6,14 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:21:56 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/18 02:19:07 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:20:43 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #pragma once
 #include <stdio.h>
 #include <cstdio>
+#include <iomanip>
 #include <iostream>
 #include <string>
 #include <cctype>

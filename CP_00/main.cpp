@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/18 19:40:28 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/18 19:40:28 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/22 21:30:01 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "Phonebook.hpp"
 #include "Contact.hpp"
@@ -19,13 +19,21 @@ int main ()
     contacts tmp_cont;
     std::string comd;
     std::string input;
+    int index;
     
     while(true)
     {
+        
         std::cout << "enter command *ADD, SEARCH, EXIT* : ";
-        std::getline(std::cin,comd);
-        int index;
-        if (comd == "ADD")
+        if(!std::getline(std::cin,comd))
+        {
+            if(std::cin.eof())
+            {
+                std::cout << "Exiting program !\n";
+            }
+                break;
+        }
+        if (comd == "A")
         {
             std::cout << "enter first name: ";
             std::getline(std::cin, input);

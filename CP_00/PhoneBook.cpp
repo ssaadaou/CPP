@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/17 17:21:26 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/18 02:30:59 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/21 22:07:20 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -31,25 +31,47 @@ void Phonebook::add_cont(const contacts& nw_contact)
         t_contact[index % 8] = nw_contact;
 }
 
+// std::string long_string(std::string tmp)
+// {
+//     std::string new_str = 
+// }
+
 void Phonebook::Display_all_cont() const
 {
+    std::cout << "_____________________________________________" << std::endl;
+    std::cout << "|  INDEX   |FIRST NAME| LAST NAME| NICK NAME|" << std::endl;
+    std::cout << "|__________|__________|__________|__________|" << std::endl;
     for (int i = 0; i < index; i++)
     {
-        std::cout << "________________" << "|";
-        std::cout << i << "|"
-                << t_contact[i].Get_firstname() << "|"
-                << t_contact[i].Get_lastname() << std::endl;
+        std::string tmp = t_contact[i].Get_firstname();
+        std::string tmp1 = t_contact[i].Get_lastname();
+        std::string tmp2 = t_contact[i].Get_nickname();
+
+        if(t_contact[i].Get_firstname().length() > 10)
+            tmp = t_contact[i].Get_firstname().substr(0, 9) + ".";
+        if(t_contact[i].Get_lastname().length() > 10)
+            tmp1 = t_contact[i].Get_lastname().substr(0, 9) + ".";
+        if(t_contact[i].Get_nickname().length() > 10)
+            tmp2 = t_contact[i].Get_nickname().substr(0, 9) + ".";
+        std::cout << "|"<< std::right << std::setw(10) << i + 1 << "|"
+                << std::right << std::setw(10) << tmp << "|"
+                << std::right << std::setw(10) << tmp1 << "|"
+                << std::right << std::setw(10) << tmp2 << "|"
+                << std::endl;
+                std::cout <<"|__________|__________|__________|__________|" << std::endl;
     }
 }
 
 void Phonebook::Display_cont_details(int idx) const
 {
-    if(idx >= 0 && idx < index)
+    if(idx > 0 && idx <= index)
     {
-        std::cout << "Fist_name: " << t_contact[idx].Get_firstname() << std::endl;
-        std::cout << "Last_name: " << t_contact[idx].Get_lastname() << std::endl;
-        std::cout << "Nick_name: " << t_contact[idx].Get_nickname() << std::endl;
-        std::cout << "Phone_number: " << t_contact[idx].Get_phonenum() << std::endl;
+        std::cout << "idx : " << idx;
+        std::cout << " , index :" << index << "|" << std::endl;
+        std::cout << "Fist_name: " << t_contact[idx - 1].Get_firstname() << std::endl;
+        std::cout << "Last_name: " << t_contact[idx -1].Get_lastname() << std::endl;
+        std::cout << "Nick_name: " << t_contact[idx -1].Get_nickname() << std::endl;
+        std::cout << "Phone_number: " << t_contact[idx -1].Get_phonenum() << std::endl;
     }
     else
         std::cout << "Invalid_index" << std::endl;
