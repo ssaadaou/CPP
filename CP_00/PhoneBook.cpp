@@ -62,8 +62,22 @@ void Phonebook::Display_all_cont() const
     }
 }
 
-void Phonebook::Display_cont_details(int idx) const
+bool Phonebook::Display_cont_details(void)
 {
+    std::string comd;
+    int idx;
+    std::cout << "enter index of the contact to show details: " << std::endl;
+    if(!std::getline(std::cin,comd))
+    {
+        if(std::cin.eof())
+        {
+            std::cout << "Exiting program !\n";
+        }
+        return (false);
+    }
+    else 
+        idx = std::atoi(comd.c_str());
+
     if(idx > 0 && idx <= index)
     {
         std::cout << "idx : " << idx;
@@ -74,7 +88,11 @@ void Phonebook::Display_cont_details(int idx) const
         std::cout << "Phone_number: " << t_contact[idx -1].Get_phonenum() << std::endl;
     }
     else
+    {
         std::cout << "Invalid_index" << std::endl;
+        Display_cont_details();
+    }
+    return true;
 }
 
 // int main()

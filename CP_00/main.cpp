@@ -19,7 +19,6 @@ int main ()
     contacts tmp_cont;
     std::string comd;
     std::string input;
-    int index;
     
     while(true)
     {
@@ -55,10 +54,9 @@ int main ()
         }
         else if (comd == "SEARCH")
         {
-            my_pbook.Display_all_cont();
-            std::cout << "enter index of the contact to show details: ";
-            std::cin >> index;
-            my_pbook.Display_cont_details(index);
+                my_pbook.Display_all_cont();
+                if (!my_pbook.Display_cont_details())
+                    break;
         }
         else if( comd == "EXIT")
             break;
