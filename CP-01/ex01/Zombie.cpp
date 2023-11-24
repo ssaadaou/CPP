@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 22:23:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/22 21:06:14 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/11/23 23:27:18 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/11/24 17:44:23 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,36 +14,28 @@
 
 Zombie::Zombie(std::string name)
 {
-     this->name = name;
+    this->name = name;
+}
+Zombie::Zombie()
+{
+
 }
 
 Zombie::~Zombie()
 {
-    std::cout << name << "destroyed !" << std::endl;
+    
 }
+
 void Zombie::announce (void)
 {
     std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl; 
 }
-int main ()
+// protect negative num
+int main()
 {
-    Zombie *tmp ;
-    randomChump("salma");
-    
-    tmp = newZombie("aaaaaaaaaaaaa");
-    tmp->announce ();
-    
+    int N = 93;
+    Zombie *hor = zombieHorde(N, "name of zombie");
+    for(int i = 0; i < N ; i++)
+        hor[i].announce();
+    delete[] hor;
 }
-
-//nems poulet 8.california rolls creme cheese 4 . makifry camba crunchy 6. spring rolls exotic 6. 
-// kyoto spring spring rolls 6. crunchy yo ti fry 6. 6 maki concombre. futomaki kan 5 
-
-//55
-
-// 25
-//59
-//60
-// 59
-// 55
-//39 
-// 49 -
