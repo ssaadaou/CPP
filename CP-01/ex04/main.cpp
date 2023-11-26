@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 02:28:16 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/25 18:58:18 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/11/26 03:15:36 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/11/26 03:29:13 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "main.hpp"
 
-Weapon::Weapon(std::string type)
+Replace::Replace()
 {
-    this->type = type;
+    std::cout << "Enter the filename: ";
+    std::getline(std::cin, this->filename);
+    std::cout << "Enter the string to replace: ";
+    std::getline(std::cin, this->s1);
+    std::cout << "Enter the string to replace with: ";
+    std::getline(std::cin, this->s2);
 }
-Weapon::~Weapon()
+
+Replace::~Replace()
 {
 }
 
-const std::string &Weapon::getType()
+int main(int ac, char **av)
 {
-    return (this->type);
-}
-void Weapon::setType(std::string new_type)
-{
-    this->type = new_type;
+    
 }

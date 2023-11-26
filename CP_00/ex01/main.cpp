@@ -17,9 +17,10 @@ int main ()
 {
     Phonebook my_pbook;
     contacts tmp_cont;
+
     std::string comd;
     std::string input;
-    
+    int size = 0;
     while(true)
     {
         
@@ -51,6 +52,7 @@ int main ()
             tmp_cont.Set_darkestsecret(input);
 
             my_pbook.add_cont(tmp_cont);
+            my_pbook.set_size(++size);
         }
         else if (comd == "SEARCH")
         {
@@ -63,3 +65,4 @@ int main ()
     
     }
 }
+

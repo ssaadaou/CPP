@@ -26,10 +26,13 @@ void contacts::Set_firstname(const std::string& name)
 void contacts::Set_nickname(const std::string& name)
 {
     nick_name = name;
+    std::cout << "NICK===name inside______________|"<< nick_name << std::endl;
+
 }
 void contacts::Set_lastname(const std::string& name)
 {
     last_name = name;
+    std::cout << "lastname inside______________|"<< last_name << std::endl;
 }
 void contacts::Set_phonenum(const std::string& number)
 {

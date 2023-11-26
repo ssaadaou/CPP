@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.cpp                                         :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/25 02:28:16 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/25 18:58:18 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/11/25 18:34:17 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/11/25 19:02:50 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
+#include "HumanB.hpp"
 
-Weapon::Weapon(std::string type)
+HumanB::HumanB(std::string name_W)
 {
-    this->type = type;
-}
-Weapon::~Weapon()
-{
+    this->name = name_W;
 }
 
-const std::string &Weapon::getType()
+HumanB::~HumanB()
 {
-    return (this->type);
 }
-void Weapon::setType(std::string new_type)
+
+void HumanB::attack()
 {
-    this->type = new_type;
+    std::cout << name << " attacks with their " << this->weapon->getType() << std::endl;
+}
+
+void HumanB::SetWeapon(Weapon &weapon)
+{
+    this->weapon = &weapon;
 }

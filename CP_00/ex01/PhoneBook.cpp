@@ -12,8 +12,14 @@
 
 #include "Phonebook.hpp"
 
+void    Phonebook::set_size(int size)
+{
+    this->constacts_size = size;
+}
+
 Phonebook::Phonebook()
 {
+    constacts_size = 0;
     index = 0;
 }
 Phonebook::~Phonebook()
@@ -53,10 +59,10 @@ void Phonebook::Display_all_cont() const
             tmp1 = t_contact[i].Get_lastname().substr(0, 9) + ".";
         if(t_contact[i].Get_nickname().length() > 10)
             tmp2 = t_contact[i].Get_nickname().substr(0, 9) + ".";
-        std::cout << "|"<< std::right << std::setw(10) << i + 1 << "|"
-                << std::right << std::setw(10) << tmp << "|"
-                << std::right << std::setw(10) << tmp1 << "|"
-                << std::right << std::setw(10) << tmp2 << "|"
+        std::cout << "|"<< std::setw(10) << i + 1 << "|"
+                << std::setw(10) << tmp << "|"
+                << std::setw(10) << tmp1 << "|"
+                << std::setw(10) << tmp2 << "|"
                 << std::endl;
                 std::cout <<"|__________|__________|__________|__________|" << std::endl;
     }
@@ -66,22 +72,22 @@ bool Phonebook::Display_cont_details(void)
 {
     std::string comd;
     int idx;
+
     std::cout << "enter index of the contact to show details: " << std::endl;
     if(!std::getline(std::cin,comd))
     {
         if(std::cin.eof())
         {
             std::cout << "Exiting program !\n";
+            // exit(0);
         }
         return (false);
     }
     else 
         idx = std::atoi(comd.c_str());
 
-    if(idx > 0 && idx <= index)
+    if(idx > 0 && idx <= index && this->constacts_size)
     {
-        std::cout << "idx : " << idx;
-        std::cout << " , index :" << index << "|" << std::endl;
         std::cout << "Fist_name: " << t_contact[idx - 1].Get_firstname() << std::endl;
         std::cout << "Last_name: " << t_contact[idx -1].Get_lastname() << std::endl;
         std::cout << "Nick_name: " << t_contact[idx -1].Get_nickname() << std::endl;
@@ -90,7 +96,8 @@ bool Phonebook::Display_cont_details(void)
     else
     {
         std::cout << "Invalid_index" << std::endl;
-        Display_cont_details();
+        if (this->constacts_size)
+            Display_cont_details();
     }
     return true;
 }

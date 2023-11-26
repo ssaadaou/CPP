@@ -25,6 +25,7 @@ class contacts
         std::string nick_name;
         std::string phone_num;
         std::string darkest_secret;
+        // int constacts_size;
     public:
         contacts();
         ~contacts();
