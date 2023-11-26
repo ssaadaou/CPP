@@ -6,16 +6,12 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 21:04:25 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/21 22:10:46 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:31:05 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #pragma once
-#include <stdio.h>
-#include <cstdio>
 #include <iostream>
-#include <string>
-#include <cctype>
 
 class contacts
 {

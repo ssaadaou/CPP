@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 20:55:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/21 20:17:08 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/26 13:53:51 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -26,13 +26,10 @@ void contacts::Set_firstname(const std::string& name)
 void contacts::Set_nickname(const std::string& name)
 {
     nick_name = name;
-    std::cout << "NICK===name inside______________|"<< nick_name << std::endl;
-
 }
 void contacts::Set_lastname(const std::string& name)
 {
     last_name = name;
-    std::cout << "lastname inside______________|"<< last_name << std::endl;
 }
 void contacts::Set_phonenum(const std::string& number)
 {
