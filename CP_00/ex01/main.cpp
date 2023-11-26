@@ -30,7 +30,7 @@ int main ()
                 std::cout << std::endl << "Exiting program !" << std::endl;
                 break;
         }
-        if (comd == "ADD")
+        if (comd == "A")
         {
             std::cout << "enter first name: ";
             if(!std::getline(std::cin,input) || std::cin.eof())
@@ -47,18 +47,20 @@ int main ()
             }
             tmp_cont.Set_lastname(input);
             std::cout << "enter nick name: ";
-            tmp_cont.Set_nickname(input);
             if(!std::getline(std::cin,input) || std::cin.eof())
             {
                 std::cout << std::endl << "Exiting program !" << std::endl;
                 break;
             }
+            tmp_cont.Set_nickname(input);
             std::cout << "enter phone number: ";
             if(!std::getline(std::cin,input) || std::cin.eof())
             {
                 std::cout << std::endl << "Exiting program !" << std::endl;
                 break;
             }
+            if(input.empty())
+                continue ;
             tmp_cont.Set_phonenum(input);
             std::cout << "enter darkest secret: ";
             if(!std::getline(std::cin,input) || std::cin.eof())
@@ -69,6 +71,7 @@ int main ()
             tmp_cont.Set_darkestsecret(input);
 
             my_pbook.add_cont(tmp_cont);
+            
             my_pbook.set_size(++size);
         }
         else if (comd == "SEARCH")

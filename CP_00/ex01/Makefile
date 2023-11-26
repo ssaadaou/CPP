@@ -6,12 +6,12 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 16:23:00 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/11/25 16:52:43 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/11/26 21:26:58 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CPPC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
 CPPFILES = main.cpp Contact.cpp PhoneBook.cpp
 CPPOFILES = $(CPPFILES:%.cpp=%.o)
 NAME = phonebook
