@@ -6,29 +6,32 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 16:23:00 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/11/26 21:26:58 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/11/27 13:50:02 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CPPC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 
-CPPFILES = main.cpp Contact.cpp PhoneBook.cpp
-CPPOFILES = $(CPPFILES:%.cpp=%.o)
-NAME = phonebook
+NAME = Phonebook
+
+CC = c++
+SRC = main.cpp Contact.cpp PhoneBook.cpp
+HEADER = Phonebook.hpp Contact.hpp
+OBJ_F = $(SRC:%.cpp=%.o)
+RM = rm -rf
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME) : $(CPPOFILES) Contact.hpp PhoneBook.hpp
-	$(CPPC) $(CPPOFILES) -o $(NAME)
+$(NAME) : $(OBJ_F) $(HEADER)
+	$(CC) $(CPPFLAGS) $(OBJ_F) -o $(NAME)
 
 %.o : %.cpp
-	$(CPPC) $(CPPFLAGS) $< -c
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(CPPOFILES)
+	$(RM) $(OBJ_F)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

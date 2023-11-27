@@ -1,4 +1,4 @@
-#******************************************************************************#
+# **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
@@ -6,29 +6,32 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/25 16:25:16 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/11/26 23:16:28 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/11/27 13:53:46 by ssaadaou         ###   ########.fr        #
 #                                                                              #
-#******************************************************************************#
+# **************************************************************************** #
 
-CPPC = c++
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-CPPFILES = megaphone.cpp
-CPPOFILES = $(CPPFILES:%.cpp=%.o)
+
 NAME = megaphone
+
+CC = c++
+SRC = megaphone.cpp
+OBJ_F = $(SRC:%.cpp=%.o)
+RM = rm -rf
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all: $(NAME)
 
-$(NAME) : $(CPPOFILES) #.hp
-	$(CPPC) $(CPPOFILES) -o $(NAME)
+$(NAME) : $(OBJ_F)
+	$(CC) $(CPPFLAGS) $(OBJ_F) -o $(NAME)
 
 %.o : %.cpp
-	$(CPPC) $(CPPFLAGS) $< -c
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(CPPOFILES)
+	$(RM) $(OBJ_F)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

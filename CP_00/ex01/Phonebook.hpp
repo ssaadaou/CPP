@@ -11,12 +11,8 @@
 /******************************************************************************/
 
 #pragma once
-#include <stdio.h>
-#include <cstdio>
-#include <iomanip>
 #include <iostream>
-#include <string>
-#include <cctype>
+#include <iomanip>
 #include "Contact.hpp"
 
 class Phonebook
@@ -31,7 +27,5 @@ class Phonebook
         void add_cont(const contacts& nw_contact);
         void Display_all_cont() const;
         bool Display_cont_details(void);
-
-        void    set_size(int size);
-        
+        void    set_size(int size); 
 };

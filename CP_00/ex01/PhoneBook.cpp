@@ -12,21 +12,22 @@
 
 #include "Phonebook.hpp"
 #include <cstdlib>
-void    Phonebook::set_size(int size)
-{
-    if(size > 8)
-        return;
-    std::cout << "size ->" << size << std::endl;
-    this->constacts_size = size;
-}
 
 Phonebook::Phonebook()
 {
     constacts_size = 0;
     index = 0;
 }
+
 Phonebook::~Phonebook()
 {
+}
+
+void    Phonebook::set_size(int size) 
+{
+    if(size > 8)
+        return;
+    this->constacts_size = size;
 }
 
 void Phonebook::add_cont(const contacts& nw_contact)
@@ -39,15 +40,11 @@ void Phonebook::add_cont(const contacts& nw_contact)
 
 void Phonebook::Display_all_cont() const
 {
-        std::cout << "constacts_size ->> " << constacts_size << std::endl;
-        std::cout << "index ->>> " << index << std::endl;
     std::cout << "_____________________________________________" << std::endl;
     std::cout << "|  INDEX   |FIRST NAME| LAST NAME| NICK NAME|" << std::endl;
     std::cout << "|__________|__________|__________|__________|" << std::endl;
     for (int i = 0; i < constacts_size ; i++)
     {
-
-
         std::string tmp = t_contact[i].Get_firstname();
         std::string tmp1 = t_contact[i].Get_lastname();
         std::string tmp2 = t_contact[i].Get_nickname();
@@ -79,15 +76,15 @@ bool Phonebook::Display_cont_details(void)
         return false;
     }
     else 
-        idx = std::atoi(comd.c_str());// overloading is to take a method or a function and change its behavior to another one
+        idx = std::atoi(comd.c_str());
+
     if (idx > 0 && idx <= this->constacts_size && comd.size() == 1)
-    {
+    { 
         std::cout << "Fist_name: " << t_contact[idx - 1].Get_firstname() << std::endl;
         std::cout << "Last_name: " << t_contact[idx -1].Get_lastname() << std::endl;
         std::cout << "Nick_name: " << t_contact[idx -1].Get_nickname() << std::endl;
         std::cout << "Phone_number: " << t_contact[idx -1].Get_phonenum() << std::endl;
         std::cout << "Darkest_Secret: " << t_contact[idx -1].Get_darkestsecret() << std::endl;
-
     }
     else
     {

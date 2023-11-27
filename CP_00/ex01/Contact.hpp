@@ -15,7 +15,7 @@
 
 class contacts
 {
-    private:
+    private: 
         std::string first_name;
         std::string last_name;
         std::string nick_name;
@@ -24,13 +24,11 @@ class contacts
     public:
         contacts();
         ~contacts();
-        // Setters used to set the value of private member variables.
         void Set_firstname(const std::string& name);//  takes one parameter -> the new value to be set
         void Set_lastname(const std::string& name);
         void Set_nickname(const std::string& name);
         void Set_phonenum(const std::string& number);
         void Set_darkestsecret(const std::string& bohoo);
-        
         
         std::string Get_firstname() const;
         std::string Get_lastname() const;

@@ -11,16 +11,15 @@
 /******************************************************************************/
 
 #include "Phonebook.hpp"
-#include "Contact.hpp"
 
 int main ()
 {
     Phonebook my_pbook;
     contacts tmp_cont;
-
     std::string comd;
     std::string input;
     int size = 0;
+
     while(true)
     {
         
@@ -30,7 +29,7 @@ int main ()
                 std::cout << std::endl << "Exiting program !" << std::endl;
                 break;
         }
-        if (comd == "A")
+        if (comd == "ADD")
         {
             std::cout << "enter first name: ";
             if(!std::getline(std::cin,input) || std::cin.eof())
@@ -81,8 +80,10 @@ int main ()
                 break;
         }
         else if( comd == "EXIT")
+        {
+            std::cout << std::endl << "Exiting program !" << std::endl;
             break;
-    
+        }
     }
 }
 
