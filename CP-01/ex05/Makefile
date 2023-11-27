@@ -5,30 +5,33 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/25 16:25:16 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/11/26 23:16:28 by ssaadaou         ###   ########.fr        #
+#    Created: 2023/11/27 02:00:58 by ssaadaou          #+#    #+#              #
+#    Updated: 2023/11/27 02:01:38 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-CPPC = c++
+NAME = replace
+
+CC = c++
+SRC = Harl.cpp main.cpp
+HEADER = Harl.hpp
+OBJ_F = $(SRC:%.cpp=%.o)
+RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
-CPPFILES = megaphone.cpp
-CPPOFILES = $(CPPFILES:%.cpp=%.o)
-NAME = megaphone
 
 all: $(NAME)
 
-$(NAME) : $(CPPOFILES) #.hp
-	$(CPPC) $(CPPOFILES) -o $(NAME)
+$(NAME) : $(OBJ_F) $(HEADER)
+	$(CC) $(CPPFLAGS) $(OBJ_F) -o $(NAME)
 
 %.o : %.cpp
-	$(CPPC) $(CPPFLAGS) $< -c
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	rm -rf $(CPPOFILES)
+	$(RM) $(OBJ_F)
 
 fclean: clean
-	rm -rf $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 
