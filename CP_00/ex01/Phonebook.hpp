@@ -25,7 +25,7 @@ class Phonebook
         Phonebook();
         ~Phonebook();
         void add_cont(const contacts& nw_contact);
-        void Display_all_cont() const;
+        void Display_all_cont()const;
         bool Display_cont_details(void);
         void    set_size(int size); 
 };

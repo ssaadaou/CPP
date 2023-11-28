@@ -12,7 +12,7 @@
 
 #include "Phonebook.hpp"
 
-int main ()
+int main()
 {
     Phonebook my_pbook;
     contacts tmp_cont;
@@ -81,7 +81,7 @@ int main ()
         }
         else if( comd == "EXIT")
         {
-            std::cout << std::endl << "Exiting program !" << std::endl;
+            std::cout << "Exiting program !" << std::endl;
             break;
         }
     }

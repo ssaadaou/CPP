@@ -24,10 +24,14 @@ int main(int ac, char **av)
     }
     else
     {
+        std::string tmp(av[1]);
+
+        std::cout << tmp << std::endl; 
+
         for(int i = 1; i < ac; i++)
         {
-            for(int j = 0; av[i][j]; j++)
-                std::cout << (char)std::toupper(av[i][j]);
+            for(int j = 0; tmp[j]; j++)
+                std::cout << (char)std::toupper(tmp[j]);
         }
     }
     std::cout<< std::endl;

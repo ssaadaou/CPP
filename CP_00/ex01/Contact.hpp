@@ -24,7 +24,7 @@ class contacts
     public:
         contacts();
         ~contacts();
-        void Set_firstname(const std::string& name);//  takes one parameter -> the new value to be set
+        void Set_firstname(const std::string& name);
         void Set_lastname(const std::string& name);
         void Set_nickname(const std::string& name);
         void Set_phonenum(const std::string& number);
