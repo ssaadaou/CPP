@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/25 15:41:39 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/25 19:02:02 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:37:01 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,5 @@ int main()
         club.setType("some other type of club");
         jim.attack();
     }
-return 0;
+    return 0;
 }
