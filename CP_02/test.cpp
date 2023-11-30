@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:14:54 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/28 22:28:22 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/11/29 20:59:22 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,7 @@ Fixed& Fixed::operator=(const Fixed &other)
     std::cout << "copy assingment operator" << std::endl;
     if (this != &other)//protecting self
     {
-        this->x = other.x;
-        this->y = other.y;
+        this->fixed_point = other.fixed_point;
     }
     return (*this);
 }

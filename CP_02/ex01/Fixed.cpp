@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 22:23:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/30 14:48:44 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/11/29 21:08:24 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/11/29 21:41:31 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "Fixed.hpp"
 
-Zombie::Zombie(std::string name)
+Fixed::Fixed(const int a)
 {
-    this->name = name;
+    std::cout<< "int to fixed constructor called" << std::endl;
+    this->fixed_point  = a << this->fractional_bits;//this reserves 8 bits for the fractional part
 }
 
-Zombie::~Zombie()
+Fixed::Fixed(const float b)
 {
-    std::cout << name << ": destroyed!" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl; 
+    std::cout<< "float to fixed constructor called" << std::endl;
+    this->fixed_point = roundf(b * (1 <<  this->fractional_bits));
+    
 }
 

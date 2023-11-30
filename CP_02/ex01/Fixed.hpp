@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 22:23:59 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/30 14:48:44 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/11/29 21:08:20 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/11/29 21:12:19 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
 
-Zombie::Zombie(std::string name)
+#pragma once
+#include <iostream>
+#include <string>
+
+class Fixed
 {
-    this->name = name;
-}
-
-Zombie::~Zombie()
-{
-    std::cout << name << ": destroyed!" << std::endl;
-}
-
-void Zombie::announce(void)
-{
-    std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl; 
-}
-
+    private:
+        int fixed_point;
+        static const int fractional_bits = 8;
+    public:
+        Fixed(const int a);
+        Fixed(const float b);
+        ~Fixed();
+        Fixed (const Fixed &other);
+        Fixed& operator=(const Fixed &other);
+        ///
+        int getRawBits(void) const;
+        void setRawBits(int const raw);
+};

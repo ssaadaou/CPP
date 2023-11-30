@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/11/27 23:47:50 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/11/30 14:39:17 by ssaadaou         ###   ########.fr        #
+#    Created: 2023/11/29 21:07:24 by ssaadaou          #+#    #+#              #
+#    Updated: 2023/11/29 21:07:36 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Zombie
+NAME = Harl
 
 CC = c++
-SRC = randomChump.cpp Zombie.cpp newZombie.cpp main.cpp
-HEADER = Zombie.hpp
+SRC = Harl.cpp main.cpp
+HEADER = Harl.hpp
 OBJ_F = $(SRC:%.cpp=%.o)
 RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
