@@ -1,26 +1,24 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/29 21:08:24 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/01 04:34:47 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/12/01 04:29:00 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/12/01 04:29:25 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(const int a)
+int main( void ) 
 {
-    std::cout<< "int to fixed constructor called" << std::endl;
-    this->fixed_point  = a << this->fractional_bits;//this reserves 8 bits for the fractional part
+    Fixed a;
+    Fixed b( a );
+    Fixed c;
+    c = b;
+    std::cout << a.getRawBits() << std::endl;
+    std::cout << b.getRawBits() << std::endl;
+    std::cout << c.getRawBits() << std::endl;
 }
-
-Fixed::Fixed(const float b)
-{
-    std::cout<< "float to fixed constructor called" << std::endl;
-    this->fixed_point = roundf(b * (1 <<  this->fractional_bits));
-}
-
