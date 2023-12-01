@@ -6,7 +6,7 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/01 04:25:22 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/12/01 04:29:59 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/12/01 16:27:37 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -24,7 +24,7 @@ all: $(NAME)
 $(NAME) : $(OBJ_F) $(HEADER)
 	$(CC) $(CPPFLAGS) $(OBJ_F) -o $(NAME)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER)
 	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
