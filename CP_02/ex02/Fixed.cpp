@@ -64,14 +64,12 @@ int	Fixed::getRawBits(void) const
 
 int	Fixed::toInt(void) const
 {
-    std::cout << "from fixed to int -> " << this->fixed_point << this->fractional_bits << std::endl;
     return(this->fixed_point >> this->fractional_bits);
 }
 
 
 float	Fixed::toFloat(void) const
 {
-    std::cout << "from fixed to float -> " << this->fixed_point << this->fractional_bits << std::endl;
     return ((float)(this->fixed_point) / (1 << this->fractional_bits));
 }
 
@@ -114,24 +112,24 @@ int Fixed::operator!=(const Fixed &other)
     return (this->fixed_point != other.fixed_point);
 }
 
-int Fixed::operator+(const Fixed &other)
+float Fixed::operator+(const Fixed &other)
 {
-    return(this->fixed_point + other.fixed_point);
+    return(this->toFloat() + other.toFloat());
 }
 
-int Fixed::operator-(const Fixed &other)
+float Fixed::operator-(const Fixed &other)
 {
-    return(this->fixed_point - other.fixed_point);
+    return(this->toFloat() - other.toFloat());
 }
 
-int Fixed::operator*(const Fixed &other)
+float Fixed::operator*(const Fixed &other)
 {
-    return(this->fixed_point * other.fixed_point);
+    return(this->toFloat() * other.toFloat());
 }
 
-int	Fixed::operator/(const Fixed &other)
+float	Fixed::operator/(const Fixed &other)
 {
-    return(this->fixed_point / other.fixed_point);
+    return(this->toFloat() / other.toFloat());
 }
 
 Fixed	Fixed::operator++()
@@ -162,7 +160,7 @@ Fixed	Fixed::operator--(int)
 
 Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
-	if(a <= b)
+	if(a.fixed_point <= b.fixed_point)
 		return (a);
 	else
 		return(b);	
@@ -170,7 +168,7 @@ Fixed& Fixed::min(Fixed &a, Fixed &b)
 
 Fixed& Fixed::max(Fixed &a, Fixed &b)
 {
-	if(a >= b)
+	if(a.fixed_point >= b.fixed_point)
 		return (a);
 	else
 		return(b);	
@@ -178,7 +176,7 @@ Fixed& Fixed::max(Fixed &a, Fixed &b)
 
 const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 {
-	if(a >= b)
+	if(a.fixed_point >= b.fixed_point)
 		return (a);
 	else
 		return(b);	
@@ -186,22 +184,10 @@ const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 
 const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
-	if(a <= b)
+	if(a.fixed_point <= b.fixed_point)
 		return (a);
 	else
 		return(b);	
 }
 
 
-int main( void ) {
-Fixed a;
-Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
-std::cout << a << std::endl;
-std::cout << ++a << std::endl;
-std::cout << a << std::endl;
-std::cout << a++ << std::endl;
-std::cout << a << std::endl;
-std::cout << b << std::endl;
-std::cout << Fixed::max( a, b ) << std::endl;
-return 0;
-}

@@ -13,7 +13,7 @@
 NAME = Fixed
 
 CC = c++
-SRC = Fixed.cpp
+SRC = Fixed.cpp main.cpp
 HEADER = Fixed.hpp
 OBJ_F = $(SRC:%.cpp=%.o)
 RM = rm -rf

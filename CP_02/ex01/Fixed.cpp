@@ -41,7 +41,7 @@ Fixed::Fixed(const Fixed &other)// creates new object as a copy of an existing o
     *this = other;//call the operator=()
 }
 
-Fixed&  Fixed::operator=(const Fixed &other) 
+Fixed   &Fixed::operator=(const Fixed &other) 
 {
     std::cout << "copy assingment operator" << std::endl;
     if (this != &other)
@@ -84,8 +84,6 @@ std::ostream &operator<<(std::ostream &out_stream, const Fixed &obj)
 
 int main()
 {
-
-
     Fixed a;
     Fixed const b( 10 );
     Fixed const c( 42.42f );
@@ -99,7 +97,4 @@ int main()
     std::cout << "b is " << b.toInt() << " as integer" << std::endl;
     std::cout << "c is " << c.toInt() << " as integer" << std::endl;
     std::cout << "d is " << d.toInt() << " as integer" << std::endl;
-return 0;
-
-    
 }

@@ -31,6 +31,7 @@ class Fixed
         Fixed (const float b);// takes float, It converts it to the corresponding fixed-point value.
         Fixed (const Fixed &other);
         Fixed& operator= (const Fixed &other);
+        // obj1 = obj2 = obj3... when we return a reference to an object it means we are chaining the changes into that obj
         ~Fixed ();
 
         //overload
@@ -40,10 +41,10 @@ class Fixed
         int operator<= (const Fixed &other);//bool
         int operator== (const Fixed &other);//bool
         int operator!= (const Fixed &other);//bool
-        int operator+ (const Fixed &other);
-        int operator- (const Fixed &other);
-        int operator* (const Fixed &other);
-        int operator/ (const Fixed &other);
+        float operator+ (const Fixed &other);//we canot chain the final value or changes
+        float operator- (const Fixed &other);
+        float operator* (const Fixed &other);
+        float operator/ (const Fixed &other);
         Fixed operator++();
         Fixed operator--();
         Fixed operator++(int);
