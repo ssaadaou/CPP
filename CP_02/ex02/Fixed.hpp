@@ -32,7 +32,20 @@ class Fixed
         Fixed (const Fixed &other);
         Fixed& operator= (const Fixed &other);
         ~Fixed ();
-        
+
+        //overload
+        int operator> (const Fixed &other);//bool
+        int operator< (const Fixed &other);//bool
+        int operator>= (const Fixed &other);//bool
+        int operator<= (const Fixed &other);//bool
+        int operator== (const Fixed &other);//bool
+        int operator!= (const Fixed &other);//bool
+        int operator+ (const Fixed &other);
+        int operator- (const Fixed &other);
+        int operator* (const Fixed &other);
+        int operator/ (const Fixed &other);
+
+        //overload
         int getRawBits(void) const;
         void setRawBits(int const raw);
         int	toInt(void) const;
