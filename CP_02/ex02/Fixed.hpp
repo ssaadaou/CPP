@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 21:08:20 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/01 16:50:00 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/01 21:59:36 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -44,6 +44,17 @@ class Fixed
         int operator- (const Fixed &other);
         int operator* (const Fixed &other);
         int operator/ (const Fixed &other);
+        Fixed operator++();
+        Fixed operator--();
+        Fixed operator++(int);
+        Fixed operator--(int);
+        
+        static Fixed& min(Fixed &a, Fixed &b);
+        static Fixed& max(Fixed &a, Fixed &b);
+        static const Fixed& max(const Fixed &a, const Fixed &b);
+        static const Fixed& min(const Fixed &a, const Fixed &b);
+
+        
 
         //overload
         int getRawBits(void) const;
