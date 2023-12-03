@@ -1,12 +1,12 @@
 /******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/01 22:18:36 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/03 11:39:03 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/12/03 12:19:01 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/12/03 20:55:42 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,22 +14,23 @@
 
 #include <iostream>
 
-class ClapTrap
+class ScavTrap
 {
     private:
         std::string name;
         unsigned int hit_points;
         unsigned int energy_points;
         unsigned int attack_damage;
-        
+
     public:
-        ClapTrap();
-        ClapTrap(std::string name);
-        ClapTrap(const ClapTrap& copy);
-        ClapTrap &operator=(const ClapTrap &other);
-        ~ClapTrap();
+        ScavTrap();
+        ScavTrap(std::string name);
+        ScavTrap(const ScavTrap& copy);
+        ScavTrap &operator=(const ScavTrap &other);
+        ~ScavTrap();
     
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
+    
 };

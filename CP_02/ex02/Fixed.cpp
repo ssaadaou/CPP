@@ -6,12 +6,12 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 21:08:24 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/01 22:12:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:45:43 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Fixed.hpp"
-#include <iostream>
+
 
 Fixed::Fixed()
 {

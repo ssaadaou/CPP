@@ -1,14 +1,14 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.hpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:07:49 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/11/29 21:05:28 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/02 15:38:20 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #pragma once
 #include <iostream>
@@ -23,22 +23,11 @@ class Fixed
         Fixed();
         ~Fixed();
         Fixed (const Fixed &other);
-        Fixed& operator=(const Fixed &other);
-        ///
+        
         int getRawBits(void) const;
         void setRawBits(int const raw);
+        
+        Fixed& operator=(const Fixed &other);
+    
 };
-
-
-//Class obj(existing_obj);
-
-// obj.var = existing_obj.var
-
-//CAO called when we have 2 obj already initialized  obj1 = obj2;
-
-//101.345 = 10.01345 * 10^2
-
-//21.55652552555956532655565454
-//21.56532655565454
-
 

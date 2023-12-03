@@ -5,28 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/02 16:56:01 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/02 18:11:56 by ssaadaou         ###   ########.fr       */
+/*   Created: 2023/12/03 10:53:05 by ssaadaou          #+#    #+#             */
+/*   Updated: 2023/12/03 11:46:34 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
-#include"Fixed.hpp"
+#include "ClapTrap.hpp"
 
-
-
-int main( void ) 
+int main()
 {
-    Fixed a;
-    Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+    ClapTrap fighter("chopper");
     
-    std::cout << a << b << a << std::endl;
-    std::cout << ++a << std::endl;
-    std::cout << a << std::endl;
-    std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    
-    std::cout << Fixed::max( a, b ) << std::endl;
-    
-    return 0;
+    fighter.attack("enemy");
+    fighter.takeDamage(4);
+    fighter.beRepaired(11);
 }

@@ -6,12 +6,13 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 21:08:24 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/01 16:58:58 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:45:05 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
 #include "Fixed.hpp"
 #include <iostream>
+
 Fixed::Fixed()
 {
     fixed_point = 0;
@@ -25,20 +26,18 @@ Fixed::~Fixed()
 
 Fixed::Fixed(const int a)
 {
-    std::cout<< "int to fixed constructor called" << std::endl;
     this->fixed_point  = a << this->fractional_bits;//this reserves 8 bits for the fractional part
 }
 
 Fixed::Fixed(const float b)
 {
-    std::cout<< "float to fixed constructor called" << std::endl;
     this->fixed_point = roundf(b * (1 <<  this->fractional_bits));
 }
 
-Fixed::Fixed(const Fixed &other)// creates new object as a copy of an existing obj by copying value using ref 
+Fixed::Fixed(const Fixed &other)
 {
     std::cout << "copy constructor" << std::endl;
-    *this = other;//call the operator=()
+    *this = other; //call the operator=()
 }
 
 Fixed   &Fixed::operator=(const Fixed &other) 
@@ -63,20 +62,17 @@ int Fixed::getRawBits(void) const
 
 int Fixed::toInt(void) const
 {
-    std::cout << "from fixed to int -> " << this->fixed_point << this->fractional_bits << std::endl;
     return(this->fixed_point >> this->fractional_bits);
 }
 
 
 float Fixed::toFloat(void) const
 {
-    std::cout << "from fixed to float -> " << this->fixed_point << this->fractional_bits << std::endl;
     return ((float)(this->fixed_point) / (1 << this->fractional_bits));
 }
 
 std::ostream &operator<<(std::ostream &out_stream, const Fixed &obj)
 {
-    //cout is an instance of ostream(which is a base class of ofstream and cout itself) class and both connected by default
     out_stream << obj.toFloat();
     return (out_stream);
 }

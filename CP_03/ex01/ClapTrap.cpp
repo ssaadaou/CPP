@@ -6,7 +6,7 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:17:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/03 20:44:48 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/03 20:48:33 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
 /******************************************************************************/
 
@@ -14,9 +14,9 @@
 
 ClapTrap::ClapTrap()
 {
-    // attack_damage = 0;
-    // hit_points = 10;
-    // energy_points = 10;
+    attack_damage = 0;
+    hit_points = 10;
+    energy_points = 10;
     std::cout << "ClapTrap default is constructed." << std::endl;
 }
 
