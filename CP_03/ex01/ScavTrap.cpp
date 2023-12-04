@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ScavTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,18 +6,18 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/03 12:18:49 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/03 21:00:57 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/04 02:41:15 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap()// by default is called the default contructor
 {
     std::cout << "ScavTrap default constructor called." << std::endl;
 }
 
-ScavTrap::ScavTrap(std::string name)
+ScavTrap::ScavTrap(std::string name)//by default is called the default contructor
 {
     this->name = name;
     hit_points = 100;
@@ -26,7 +26,18 @@ ScavTrap::ScavTrap(std::string name)
     std::cout << "ScavTrap constructor called." << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap& copy)
+{
+    *this = copy;
+    std::cout << "COPY SCAV" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
     std::cout << "ScavTrap destructor called." << std::endl;
+}
+
+void ScavTrap::guardGate()
+{
+    std::cout << "ScavTrap is a guard gate" << std::endl;
 }

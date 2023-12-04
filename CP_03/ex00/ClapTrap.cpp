@@ -1,4 +1,4 @@
-/******************************************************************************/
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,17 +6,18 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:17:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/03 20:44:48 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/03 21:58:37 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/******************************************************************************/
+/* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
-    // attack_damage = 0;
-    // hit_points = 10;
-    // energy_points = 10;
+    this->name = "chi wahd";
+    attack_damage = 0;
+    hit_points = 10;
+    energy_points = 10;
     std::cout << "ClapTrap default is constructed." << std::endl;
 }
 
@@ -40,7 +41,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy)
 	*this = copy;	
 }
 
-ClapTrap &ClapTrap::operator=(const ClapTrap &other)
+ClapTrap &ClapTrap::operator=(const ClapTrap &other)//we return a reference for chaining several assignements : obj1 = ob2 = obj3...
 {
     if(this != &other)
     {
@@ -54,7 +55,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other)
 
 void ClapTrap::attack(const std::string& target)
 {
-    if(energy_points >= 1 && hit_points > 0)
+    if(energy_points > 0 && hit_points > 0)
     {
         std::cout << "ClapTrap " << name << " attacks " << target << " and causes " << attack_damage << " hit points of damage." << std::endl;
         energy_points--;
@@ -65,7 +66,7 @@ void ClapTrap::attack(const std::string& target)
 
 void ClapTrap::takeDamage(unsigned int amount)
 {
-    if(hit_points > 0)
+    if(energy_points > 0 && hit_points > 0)
     {
         std::cout << "ClapTrap " << name << " takes " << amount << " damage " << std::endl;
         if(amount > hit_points)
@@ -77,7 +78,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if(energy_points > 0 && hit_points > 0 )
+    if(energy_points > 0 && hit_points > 0)
     {
         std::cout << "ClapTrap " << name << " repairs itself and recovers " << amount << " hit points." << std::endl ;
         energy_points--;

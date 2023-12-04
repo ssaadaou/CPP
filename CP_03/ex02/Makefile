@@ -6,7 +6,7 @@
 #    By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/01 22:17:21 by ssaadaou          #+#    #+#              #
-#    Updated: 2023/12/04 01:13:17 by ssaadaou         ###   ########.fr        #
+#    Updated: 2023/12/04 02:43:03 by ssaadaou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@
 NAME = ClapTrap
 
 CC = c++
-SRC = ClapTrap.cpp main.cpp ScavTrap.cpp
-HEADER = ClapTrap.hpp ScavTrap.hpp
+SRC = ClapTrap.cpp main.cpp FragTrap.cpp
+HEADER = ClapTrap.hpp FragTrap.hpp
 OBJ_F = $(SRC:%.cpp=%.o)
 RM = rm -rf
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
