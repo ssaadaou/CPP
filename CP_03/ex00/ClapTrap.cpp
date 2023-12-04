@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.cpp                                       :+:      :+:    :+:   */
@@ -6,15 +6,15 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:17:14 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/03 21:58:37 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:19:29 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
 {
-    this->name = "chi wahd";
+    this->name = "Default";
     attack_damage = 0;
     hit_points = 10;
     energy_points = 10;
@@ -37,7 +37,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-	std::cout << "Copy constructor called"  << std::endl;
+	std::cout << "Copy constructor of ClapTrap called"  << std::endl;
 	*this = copy;	
 }
 
@@ -61,7 +61,7 @@ void ClapTrap::attack(const std::string& target)
         energy_points--;
     }
     else 
-        std::cout << "ClapTrap " << name << " has no energy " ;
+        std::cout << "ClapTrap " << name << " has no energy " << std::endl;   
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -83,5 +83,7 @@ void ClapTrap::beRepaired(unsigned int amount)
         std::cout << "ClapTrap " << name << " repairs itself and recovers " << amount << " hit points." << std::endl ;
         energy_points--;
         hit_points += amount;
-    }  
+    }
+    else
+        std::cout << "ClapTrap " << name << " can't be repaired" << std::endl;
 }

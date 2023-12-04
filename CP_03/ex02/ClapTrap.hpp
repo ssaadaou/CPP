@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+/******************************************************************************/
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
@@ -6,9 +6,9 @@
 /*   By: ssaadaou <ssaadaou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/01 22:18:36 by ssaadaou          #+#    #+#             */
-/*   Updated: 2023/12/04 02:34:00 by ssaadaou         ###   ########.fr       */
+/*   Updated: 2023/12/03 11:39:03 by ssaadaou         ###   ########.fr       */
 /*                                                                            */
-/* ************************************************************************** */
+/******************************************************************************/
 
 #pragma once
 
@@ -16,7 +16,7 @@
 
 class ClapTrap
 {
-    protected:
+    private:
         std::string name;
         unsigned int hit_points;
         unsigned int energy_points;
@@ -29,7 +29,6 @@ class ClapTrap
         ClapTrap &operator=(const ClapTrap &other);
         ~ClapTrap();
     
-        void display();
         void attack(const std::string& target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
